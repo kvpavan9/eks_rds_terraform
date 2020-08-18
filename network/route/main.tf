@@ -9,9 +9,9 @@ locals {
 resource "aws_default_route_table" "route" {
   default_route_table_id = "${var.main_route_table_id}"
 
-  tags {
-    Name = "${terraform.workspace}"
-  }
+#  tags {
+#   Name = "${terraform.workspace}"
+#  }
 }
 
 resource "aws_route_table_association" "route_ass" {
