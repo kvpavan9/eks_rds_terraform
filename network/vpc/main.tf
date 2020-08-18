@@ -21,9 +21,9 @@ resource "aws_vpc" "vpc_id" {
 resource "aws_internet_gateway" "gw_id" {
   vpc_id = "${aws_vpc.vpc_id.id}"
 
-  tags {
-    Name = "${terraform.workspace}"
-  }
+#  tags {
+#    Name = "${terraform.workspace}"
+#  }
 }
 
 # Create dhcp option setup
@@ -31,7 +31,7 @@ resource "aws_vpc_dhcp_options" "vpc_dhcp_id" {
   domain_name         = "us-west-2.compute.internal"
   domain_name_servers = ["AmazonProvidedDNS"]
 
-  tags {
-    Name = "${terraform.workspace}"
-  }
+ # tags {
+ #   Name = "${terraform.workspace}"
+ # }
 }
