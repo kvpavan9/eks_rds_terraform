@@ -4,6 +4,7 @@ data "aws_ami" "eks-worker" {
     values = ["eks-worker-*"]
   }
   most_recent = true
+  owners      = ["454450710196"] # Amazon
 }
 
 data "aws_region" "current" {}

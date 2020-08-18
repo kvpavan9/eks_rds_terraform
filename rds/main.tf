@@ -3,12 +3,12 @@ data "aws_availability_zones" "available" {}
 resource "aws_db_subnet_group" "db_sub_gr" {
   description = "terrafom db subnet group"
   name        = "main_subnet_group"
-  subnet_ids  = ["${var.subnets}"]
+  subnet_ids  = var.subnets
 
   #  subnet_ids = [
   #    "${var.api_dev_int_subnet_ids}"]
   tags {
-    Name = "${terraform.workspace}"
+    Name = "test"
   }
 }
 
@@ -34,6 +34,6 @@ resource "aws_db_instance" "db" {
   multi_az             = false
 
   tags {
-    Name = "${terraform.workspace}"
+    Name = "test"
   }
 }
