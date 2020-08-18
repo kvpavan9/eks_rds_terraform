@@ -1,10 +1,10 @@
-variable "access_key" {
-  description = "AWS ACCEE_KEY"
-}
+#variable "access_key" {
+#  description = "AWS ACCEE_KEY"
+#}
 
-variable "secret_key" {
-  description = "AWS SECRETE_KEY"
-}
+#variable "secret_key" {
+#  description = "AWS SECRETE_KEY"
+#}
 
 variable "aws_region" {
   description = "AWS region to launch servers."
