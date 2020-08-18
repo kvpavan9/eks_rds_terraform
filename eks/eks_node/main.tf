@@ -16,8 +16,8 @@ data "template_file" "user_data" {
     eks_certificate_authority = "${var.eks_certificate_authority}"
     eks_endpoint              = "${var.eks_endpoint}"
     eks_cluster_name          = "${var.eks_cluster_name}"
-    workspace 		       = "${terraform.workspace}"
-    aws_region_current_name 	= "${data.aws_region.current.name}"
+#    workspace 		       = "${terraform.workspace}"
+    aws_region_current_name   = "${data.aws_region.current.name}"
   }
 }
 
