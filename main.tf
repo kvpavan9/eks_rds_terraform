@@ -78,7 +78,7 @@ module "sec_group_rds" {
 module "rds" {
   source = "./rds"
 
-  subnets = ["${module.subnets.subnets}"]
+  subnets = ["${module.network.subnets}"]
 
   sec_grp_rds       = "${module.sec_group_rds.sec_grp_rds}"
   identifier        = "${var.identifier}"
