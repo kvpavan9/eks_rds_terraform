@@ -13,9 +13,9 @@ resource "aws_security_group" "cluster" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
-    Name = "${terraform.workspace}"
-  }
+#  tags {
+#    Name = "${terraform.workspace}"
+#  }
 }
 
 resource "aws_security_group_rule" "cluster-ingress-node-https" {
