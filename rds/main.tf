@@ -33,7 +33,7 @@ resource "aws_db_instance" "db" {
   publicly_accessible  = false
   multi_az             = false
 
-  tags {
-    Name = "test"
-  }
+#  tags {
+#    Name = "test"
+#  }
 }
