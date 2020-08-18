@@ -7,9 +7,9 @@ resource "aws_db_subnet_group" "db_sub_gr" {
 
   #  subnet_ids = [
   #    "${var.api_dev_int_subnet_ids}"]
-  tags {
-    Name = "test"
-  }
+  #tags {
+  #  Name = "test"
+  #}
 }
 
 resource "aws_db_instance" "db" {
