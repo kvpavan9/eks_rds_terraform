@@ -12,13 +12,13 @@ data "aws_region" "current" {}
 data "template_file" "user_data" {
   template = "${file("${path.module}/userdata.tpl")}"
 
-  vars {
-    eks_certificate_authority = "${var.eks_certificate_authority}"
-    eks_endpoint              = "${var.eks_endpoint}"
-    eks_cluster_name          = "${var.eks_cluster_name}"
+#  vars {
+#    eks_certificate_authority = "${var.eks_certificate_authority}"
+#    eks_endpoint              = "${var.eks_endpoint}"
+#    eks_cluster_name          = "${var.eks_cluster_name}"
 #    workspace 		       = "${terraform.workspace}"
-    aws_region_current_name   = "${data.aws_region.current.name}"
-  }
+#    aws_region_current_name   = "${data.aws_region.current.name}"
+#  }
 }
 
 resource "null_resource" "export_rendered_template" {
@@ -35,7 +35,7 @@ resource "aws_launch_configuration" "terra" {
   name_prefix                 = "terraform-eks"
   key_name                    = "test_access"
   security_groups             = ["${var.security_group_node}"]
-	user_data 									= "${data.template_file.user_data.rendered}"
+  user_data 		      = "${data.template_file.user_data.rendered}"
   lifecycle {
     create_before_destroy = true
   }
